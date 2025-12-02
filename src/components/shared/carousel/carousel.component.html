@@ -1,0 +1,49 @@
+@let hasManyItems = items().length > 1;
+
+@if (items().length > 0) {
+  <div
+    cdkTrapFocus
+    tabindex="0"
+    class="carousel-card"
+    (mouseenter)="pause()"
+    (mouseleave)="resume()"
+  >
+    @if (hasManyItems) {
+      <div
+        class="carousel-nav-area left"
+        role="button"
+        aria-label="Previous slide"
+        (click)="prev()"
+      >
+        <mat-icon>chevron_left</mat-icon>
+      </div>
+    }
+
+    <div class="carousel-viewport">
+
+      <ng-container
+        *ngTemplateOutlet="
+              resolvedTemplate();
+              context: { $implicit: currentItem(), index: currentIndex() }
+            "
+      ></ng-container>
+    </div>
+
+    @if (hasManyItems) {
+      <div
+        class="carousel-nav-area right"
+        role="button"
+        aria-label="Next slide"
+        (click)="next()"
+      >
+        <mat-icon>chevron_right</mat-icon>
+      </div>
+    }
+  </div>
+}
+
+<ng-template #defaultItem let-item>
+  <div class="default-item">
+    {{ item | json }}
+  </div>
+</ng-template>

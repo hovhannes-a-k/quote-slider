@@ -1,0 +1,30 @@
+:host {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.quote {
+  &-slide {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  &-text {
+    font-size: 1.25rem;
+    line-height: 1.6;
+    font-style: italic;
+    margin: 0;
+  }
+
+  &-author {
+    margin: 0;
+    font-size: 0.95rem;
+    font-weight: 500;
+    opacity: 0.8;
+  }
+}

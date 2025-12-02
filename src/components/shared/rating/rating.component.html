@@ -1,0 +1,18 @@
+<div
+  role="radiogroup"
+  aria-label="Star rating"
+  class="star-rating"
+>
+  @for (star of [].constructor(stars); ; track $index; let i = $index) {
+    <span
+      role="radio"
+      tabindex="0"
+      [attr.aria-checked]="currentRating() === i + 1"
+      (click)="!disabled() && setRating(i + 1)"
+      (keydown.enter)="setRating(i + 1)"
+      [class.filled]="i < currentRating()"
+    >
+      ★
+    </span>
+  }
+</div>

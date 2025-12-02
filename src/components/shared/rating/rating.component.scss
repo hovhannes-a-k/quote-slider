@@ -1,0 +1,15 @@
+.star-rating {
+  display: flex;
+  gap: 0.5rem;
+  span {
+    font-size: 2rem;
+    cursor: pointer;
+    color: var(--gray);
+    transition: color 0.2s;
+    user-select: none;
+
+    &.filled {
+      color: var(--yellow-100);
+    }
+  }
+}

@@ -1,0 +1,61 @@
+:host {
+  display: block;
+  width: 100%;
+}
+
+.carousel {
+  &-card {
+    margin: 0 auto;
+    display: flex;
+    box-sizing: border-box;
+    width: 100%;
+    outline: none;
+  }
+
+  &-viewport {
+    width: 100%;
+    padding: 1.5rem 1.25rem;
+    min-height: 8rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &-nav-area {
+    width: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    user-select: none;
+    transition: background 120ms ease, transform 120ms ease;
+
+    mat-icon {
+      font-size: 2rem;
+      height: 2rem;
+      width: 2rem;
+    }
+
+    &.right {
+      right: 0;
+      left: auto;
+    }
+
+    &.left {
+      left: 0;
+      right: auto;
+    }
+
+    &:hover {
+      mat-icon {
+        transform: scale(1.05);
+      }
+    }
+  }
+}
+
+.default-item {
+  font-family: monospace;
+  font-size: 0.85rem;
+}
